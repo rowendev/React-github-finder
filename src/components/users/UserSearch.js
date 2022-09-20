@@ -22,11 +22,7 @@ function UserSearch() {
   };
 
   const handleClear = () => {
-    if (window.confirm("are you sure?")) {
-      clearUsers();
-    } else {
-      return;
-    }
+    clearUsers();
   };
 
   return (
