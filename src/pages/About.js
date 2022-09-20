@@ -10,13 +10,13 @@ function About() {
         <pre data-prefix="$">
           <code>// About This App . . .</code>
         </pre>
-        <pre data-prefix="$">
+        <pre data-prefix=">">
           <code></code>
         </pre>
-        <pre data-prefix="$">
+        <pre data-prefix=">">
           <code>This app is build with React</code>
         </pre>
-        <pre data-prefix="$" className="text-warning">
+        <pre data-prefix=">" className="text-warning">
           <code>Styling with Tailwind CSS and daisyUI</code>
         </pre>
         <pre data-prefix=">">
