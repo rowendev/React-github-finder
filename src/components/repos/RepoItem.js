@@ -25,7 +25,7 @@ function RepoItem({ repo }) {
         ref={myRef}
       >
         <div className="card-body md:p-4 sm:p-4">
-          <h2 className="mb-2 text-xl font-semibold hover:underline">
+          <h2 className="mb-6 text-xl font-semibold hover:underline">
             <a href={html_url} rel="noreferrer" target="_blank">
               <FaLink className="inline mr-1 " /> {name}
             </a>
