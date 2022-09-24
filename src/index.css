@@ -30,7 +30,7 @@ body {
     }
   }
 
-@media (max-width:400px) {
+@media (max-width:440px) {
   .card-body {
     padding: 0.75rem;
   }
