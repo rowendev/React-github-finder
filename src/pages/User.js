@@ -3,6 +3,7 @@ import React, { useEffect, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
 import GithubContext from "../context/github/GithubContext";
 import RepoList from "../components/repos/RepoList";
+import CountUp from "react-countup";
 
 function User() {
   const { getUser, user, isLoading, getUserRepos, repos } =
@@ -30,7 +31,7 @@ function User() {
     public_gists,
     hireable,
   } = user;
-
+  console.log();
   if (isLoading) {
     return (
       <div className="text-center mx-auto">
@@ -55,6 +56,7 @@ function User() {
               <figure>
                 <img src={avatar_url} alt="" />
               </figure>
+
               <div className="card-body justify-end">
                 <h2 className="card-title mb-0">{name}</h2>
                 <p>{login}</p>
@@ -100,7 +102,7 @@ function User() {
                       href={`https://${blog}`}
                       target="_blank"
                       rel="noreferrer"
-                      className="hover:text-slate-50"
+                      className="hover:text-sky-600"
                     >
                       {blog}
                     </a>
@@ -115,7 +117,7 @@ function User() {
                       href={`https://twitter.com/${twitter_username}`}
                       target="_blank"
                       rel="noreferrer"
-                      className="hover:text-slate-50"
+                      className="hover:text-sky-600"
                     >
                       {twitter_username}
                     </a>
@@ -132,8 +134,20 @@ function User() {
               <FaUsers className="text-3xl md:text-5xl" />
             </div>
             <div className="stat-title pr-5">Followers</div>
-            <div className="stat-value pr-5 text-3xl md:text-4xl">
-              <p className="text-slate-50">{followers}</p>
+            <div className="stat-value pr-5 pt-1 text-3xl md:text-4xl">
+              {/* <p className="text-slate-50">{followers}</p> */}
+              <CountUp
+                end={followers > 1000 ? parseInt(followers / 1000) : followers}
+                duration={2}
+                className="text-slate-50"
+              />
+              <p
+                className="text-slate-50"
+                style={{ fontSize: "1.5rem", display: "inline-block" }}
+              >
+                {" "}
+                K+
+              </p>
             </div>
           </div>
           <div className="stat">
@@ -142,7 +156,8 @@ function User() {
             </div>
             <div className="stat-title pr-5">Following</div>
             <div className="stat-value pr-5 text-3xl md:text-4xl ">
-              <p className="text-slate-50">{following}</p>
+              {/* <p className="text-slate-50">{following}</p> */}
+              <CountUp end={following} duration={2} className="text-slate-50" />
             </div>
           </div>
           <div className="stat">
@@ -151,7 +166,12 @@ function User() {
             </div>
             <div className="stat-title pr-5">Public Repos</div>
             <div className="stat-value pr-5 text-3xl md:text-4xl">
-              <p className="text-slate-50">{public_repos}</p>
+              {/* <p className="text-slate-50">{public_repos}</p> */}
+              <CountUp
+                end={public_repos}
+                duration={2}
+                className="text-slate-50"
+              />
             </div>
           </div>
 
@@ -161,7 +181,12 @@ function User() {
             </div>
             <div className="stat-title pr-5">Public Gists</div>
             <div className="stat-value pr-5 text-3xl md:text-4xl">
-              <p className="text-slate-50">{public_gists}</p>
+              {/* <p className="text-slate-50">{public_gists}</p> */}
+              <CountUp
+                end={public_gists}
+                duration={2}
+                className="text-slate-50"
+              />
             </div>
           </div>
         </div>

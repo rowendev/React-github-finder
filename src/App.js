@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import User from "./pages/User";
+import "animate.css";
 
 function App() {
   return (
