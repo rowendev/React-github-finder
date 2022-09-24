@@ -30,9 +30,9 @@ body {
     }
   }
 
-  :root {
-    --animate-delay-1: 0.5s;
-    --animate-delay-2: 0.75s;
-    --animate-delay-3: 1s;
+/* @media (max-width:768px) {
+  .card-body {
+    padding: 1rem;
   }
-  
+}
+   */
